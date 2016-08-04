@@ -11,6 +11,7 @@ table {
   border: 5px solid black;
   margin: 0 auto;
 }
+
 td {
   width: 150px;
   height: 150px;
@@ -19,4 +20,120 @@ td {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.one1 {
+  background-image: url('./images/bashir.jpeg');
+}
+.two1 {
+  background-image: url('./images/changling.jpeg');
+}
+.three1 {
+  background-image: url('./images/cisco.jpeg');
+}
+.four1 {
+  background-image: url('./images/dax.jpeg');
+}
+.five1 {
+  background-image: url('./images/dominion.jpeg');
+}
+.six1 {
+  background-image: url('./images/garock.jpeg');
+}
+
+.one2 {
+  background-image: url('./images/jemHadar.jpeg');
+}
+.two2 {
+  background-image: url('./images/kaiWinn.jpeg');
+}
+.three2 {
+  background-image: url('./images/kyra.jpeg');
+}
+.four2 {
+  background-image: url('./images/morn.jpeg');
+}
+.five2 {
+  background-image: url('./images/newDax.jpeg');
+}
+.six2 {
+  background-image: url('./images/obrian.jpeg');
+}
+
+.one3 {
+  background-image: url('./images/odo.jpeg');
+}
+.two3 {
+  background-image: url('./images/quark.jpeg');
+}
+.three3 {
+  background-image: url('./images/rom.jpeg');
+}
+.four3 {
+  background-image: url('./images/station.jpeg');
+}
+.five3 {
+  background-image: url('./images/worf.jpeg');
+}
+.six3 {
+  background-image: url('./images/wormHole.jpeg');
+}
+
+/*////////////////////////////////////////////////////*/
+
+.one4 {
+  background-image: url('./images/bashir.jpeg');
+}
+.two4 {
+  background-image: url('./images/changling.jpeg');
+}
+.three4 {
+  background-image: url('./images/cisco.jpeg');
+}
+.four4 {
+  background-image: url('./images/dax.jpeg');
+}
+.five4 {
+  background-image: url('./images/dominion.jpeg');
+}
+.six4 {
+  background-image: url('./images/garock.jpeg');
+}
+
+.one5 {
+  background-image: url('./images/jemHadar.jpeg');
+}
+.two5 {
+  background-image: url('./images/kaiWinn.jpeg');
+}
+.three5 {
+  background-image: url('./images/kyra.jpeg');
+}
+.four5 {
+  background-image: url('./images/morn.jpeg');
+}
+.five5 {
+  background-image: url('./images/newDax.jpeg');
+}
+.six5 {
+  background-image: url('./images/obrian.jpeg');
+}
+
+.one6 {
+  background-image: url('./images/odo.jpeg');
+}
+.two6 {
+  background-image: url('./images/quark.jpeg');
+}
+.three6 {
+  background-image: url('./images/rom.jpeg');
+}
+.four6 {
+  background-image: url('./images/station.jpeg');
+}
+.five6 {
+  background-image: url('./images/worf.jpeg');
+}
+.six6 {
+  background-image: url('./images/wormHole.jpeg');
 }
