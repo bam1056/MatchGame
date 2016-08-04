@@ -6,7 +6,10 @@ const init = () => {
     if (firstClick){
       bashir.style.backgroundImage = "url('./images/bashir.jpeg')"
       firstClick = false
-    } else bashir.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+    } else {
+      bashir.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+      firstClick = true
+    }
   })
 }
 
