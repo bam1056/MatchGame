@@ -1,0 +1,23 @@
+{
+  "name": "match_game",
+  "version": "1.0.0",
+  "description": "memory match game hw",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "memory",
+    "match"
+  ],
+  "author": "Brett Macy",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.14.1"
+  },
+  "devDependencies": {
+    "bnpm": "^1.0.0",
+    "browserify": "^13.1.0",
+    "install": "^0.8.1"
+  }
+}
