@@ -26,12 +26,10 @@ const drawBoard = () => {
   let imageNum
   for (let i = 0; i < state.length; i++) {
     for (let j = 0; j < state[i].length; j++) {
-      // const col = state[i][j]
       const cell = document.querySelector(
         `table tr:nth-child(${i + 1}) td:nth-child(${j + 1})`
       )
       imageNum = getImageNum()
-      console.log("Img num", imageNum)
       cell.style.backgroundImage = `url('./images/img00${imageNum + 1}.jpeg')`
     }
   }
@@ -39,14 +37,12 @@ const drawBoard = () => {
 
 const init = () => {
   setNumArray()
-  console.log(numArray)
   drawBoard()
   const rows = document.querySelectorAll('tr')
   for (let i = 0; i < rows.length; i++) {
     const cols = rows[i].querySelectorAll('td')
     for (let j = 0; j < cols.length; j++) {
       cols[j].addEventListener('click', () => {
-        drawBoard()
       })
     }
   }
