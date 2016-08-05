@@ -1,16 +1,32 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+// const handleImgClick = () => {
+//   console.log('WINNNING!')
+//   // this.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+// }
+let clicked = true
 
 const init = () => {
   for (let i = 0; i < 36; i++) {
-    const img = `./images/00${i + 1}.jpeg`
-    const inputs = document.querySelector('.input')
+    const img = "url('./images/spaceBG.jpeg')"
+    const images = document.querySelector('.images')
     const div = document.createElement('div')
+    div.className = `img ${i}`
     div.style.backgroundImage = img
-    div.addEventListener('click', handleLetterClick)
-    inputs.appendChild(div)
+    div.addEventListener('click', () => {
+      console.log('WINNING')
+      if (clicked){
+        div.style.backgroundImage = `url('./images/img00${i + 1}.jpeg')`
+        clicked = false
+      } else {
+        div.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+        clicked = true
+      }
+    })
+    images.appendChild(div)
   }
 }
 
+document.addEventListener('DOMContentLoaded', init)
 
 
 

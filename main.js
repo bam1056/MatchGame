@@ -1,15 +1,31 @@
+// const handleImgClick = () => {
+//   console.log('WINNNING!')
+//   // this.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+// }
+let clicked = true
 
 const init = () => {
   for (let i = 0; i < 36; i++) {
-    const img = `./images/00${i + 1}.jpeg`
-    const inputs = document.querySelector('.input')
+    const img = "url('./images/spaceBG.jpeg')"
+    const images = document.querySelector('.images')
     const div = document.createElement('div')
+    div.className = `img ${i}`
     div.style.backgroundImage = img
-    div.addEventListener('click', handleLetterClick)
-    inputs.appendChild(div)
+    div.addEventListener('click', () => {
+      console.log('WINNING')
+      if (clicked){
+        div.style.backgroundImage = `url('./images/img00${i + 1}.jpeg')`
+        clicked = false
+      } else {
+        div.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+        clicked = true
+      }
+    })
+    images.appendChild(div)
   }
 }
 
+document.addEventListener('DOMContentLoaded', init)
 
 
 
