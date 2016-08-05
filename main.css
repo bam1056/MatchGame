@@ -12,16 +12,16 @@ table {
   margin: 0 auto;
 }
 
-td.active {
+td {
   width: 150px;
   height: 150px;
   border: 5px solid black;
-  background-image: url('./images/spaceBG.jpeg');
+  /*background-image: url('./images/spaceBG.jpeg');*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
+/*
 .one1 {
   background-image: url('./images/bashir.jpeg');
 }
@@ -79,8 +79,6 @@ td.active {
   background-image: url('./images/wormHole.jpeg');
 }
 
-/*////////////////////////////////////////////////////*/
-
 .one4 {
   background-image: url('./images/bashir.jpeg');
 }
@@ -136,4 +134,4 @@ td.active {
 }
 .six6 {
   background-image: url('./images/wormHole.jpeg');
-}
+}*/
