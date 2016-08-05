@@ -6,9 +6,18 @@ const state = [
   [0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0]
 ]
-// let firstClick = true
-const cellValues = { 0: "url('./images/spaceBG.jpeg')" }
 let numArray = []
+
+// const Card = (image, clicked, ref) => {
+//   this.imageLink = image
+//   this.bgLink = '"url(./images/spaceBG.jpeg)"',
+//   this.clicked = clicked
+//   this.tableRef = ref
+// }
+
+const handleClickEvent = () => {
+  console.log('Working')
+}
 
 const setNumArray = () => {
   for (let i = 0; i < 36; i++) {
@@ -18,8 +27,10 @@ const setNumArray = () => {
 }
 
 const getImageNum = () => {
-  var randomIndex = Math.floor(Math.random() * numArray.length)
-   return numArray.splice(randomIndex, 1)[0]
+  let randomIndex = Math.floor(Math.random() * numArray.length)
+  let num = numArray.splice(randomIndex, 1)[0]
+  // console.log(num, numArray)
+  return num
 }
 
 const drawBoard = () => {
@@ -30,6 +41,8 @@ const drawBoard = () => {
         `table tr:nth-child(${i + 1}) td:nth-child(${j + 1})`
       )
       imageNum = getImageNum()
+      // let curCard = new Card(`url('./images/img00${imageNum + 1}.jpeg')`,"url('./images/spaceBG.jpeg')", false, cell)
+      // console.log(curCard)
       cell.style.backgroundImage = `url('./images/img00${imageNum + 1}.jpeg')`
     }
   }
@@ -43,6 +56,7 @@ const init = () => {
     const cols = rows[i].querySelectorAll('td')
     for (let j = 0; j < cols.length; j++) {
       cols[j].addEventListener('click', () => {
+        handleClickEvent()
       })
     }
   }

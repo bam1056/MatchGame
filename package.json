@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start -s -f index.html main.css bundle.js",
-    "build": "watchify main.js -o bundle.js"
+    "build": "watchify main.js -o bundle.js",
+    "watch": "'npm run start''npm run build'"
   },
   "repository": {
     "type": "git",
