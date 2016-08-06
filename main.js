@@ -1,9 +1,15 @@
-// const handleImgClick = () => {
-//   console.log('WINNNING!')
-//   // this.style.backgroundImage = "url('./images/spaceBG.jpeg')"
-// }
-let clicked = true
-let divClicked = []
+let arrayOfClicked = Array(36).fill(true)
+console.log(arrayOfClicked)
+
+function handleImgClick (arrayOfClicked, i, cardImg, bgImg) {
+  if (arrayOfClicked[i]) {
+    this.style.backgroundImage = cardImg
+    arrayOfClicked[i] = false
+  } else {
+    this.style.backgroundImage = bgImg
+    arrayOfClicked[i] = true
+  }
+}
 
 const init = () => {
   for (let j = 0; j < 2; j++) {
@@ -12,46 +18,11 @@ const init = () => {
       const cardImg = `url('./images/img00${i + 1}.jpeg')`
       const images = document.querySelector('.images')
       const div = document.createElement('div')
-      div.className = `img ${i}`
-      div.style.backgroundImage = bgImg
-      div.addEventListener('click', handleClick = function() {
-        let cur = (event.target)
-        divClicked.push(cur)
-        if (clicked) {
-          div.style.backgroundImage = cardImg
-          clicked = false
-        } else {
-          div.style.backgroundImage = bgImg
-          clicked = true
-        }
-      })
+      div.className = `img ${i} hidden`
+      div.addEventListener('click', function () { handleImgClick.call(this, arrayOfClicked, i, cardImg, bgImg) })
       images.appendChild(div)
-    }
-  }
-}
-//   for (let i = 0; i < 18; i++) {
-//     const img = "url('./images2/spaceBG.jpeg')"
-//     const images = document.querySelector('.images')
-//     const div = document.createElement('div')
-//     div.className = `img ${i}`
-//     div.style.backgroundImage = img
-//     div.addEventListener('click', () => {
-//       console.log('WINNING')
-//       if (clicked) {
-//         div.style.backgroundImage = `url('./images2/img00${i + 1}.jpeg')`
-//         clicked = false
-//       } else {
-//         div.style.backgroundImage = "url('./images2/spaceBG.jpeg')"
-//         clicked = true
-//       }
-//     })
-//     images.appendChild(div)
-//   }
-// }
 
 document.addEventListener('DOMContentLoaded', init)
-
-
 
 // const state = [
 //   [0, 0, 0, 0, 0, 0],
