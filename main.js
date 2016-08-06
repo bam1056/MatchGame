@@ -5,25 +5,46 @@
 let clicked = true
 
 const init = () => {
-  for (let i = 0; i < 36; i++) {
-    const img = "url('./images/spaceBG.jpeg')"
-    const images = document.querySelector('.images')
-    const div = document.createElement('div')
-    div.className = `img ${i}`
-    div.style.backgroundImage = img
-    div.addEventListener('click', () => {
-      console.log('WINNING')
-      if (clicked){
-        div.style.backgroundImage = `url('./images/img00${i + 1}.jpeg')`
-        clicked = false
-      } else {
-        div.style.backgroundImage = "url('./images/spaceBG.jpeg')"
-        clicked = true
-      }
-    })
-    images.appendChild(div)
+  for (let j = 0; j < 2; j++) {
+    for (let i = 0; i < 18; i++) {
+      const img = "url('./images/spaceBG.jpeg')"
+      const images = document.querySelector('.images')
+      const div = document.createElement('div')
+      div.className = `img ${i}`
+      div.style.backgroundImage = img
+      div.addEventListener('click', () => {
+        console.log('WINNING')
+        if (clicked) {
+          div.style.backgroundImage = `url('./images/img00${i + 1}.jpeg')`
+          clicked = false
+        } else {
+          div.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+          clicked = true
+        }
+      })
+      images.appendChild(div)
+    }
   }
 }
+//   for (let i = 0; i < 18; i++) {
+//     const img = "url('./images2/spaceBG.jpeg')"
+//     const images = document.querySelector('.images')
+//     const div = document.createElement('div')
+//     div.className = `img ${i}`
+//     div.style.backgroundImage = img
+//     div.addEventListener('click', () => {
+//       console.log('WINNING')
+//       if (clicked) {
+//         div.style.backgroundImage = `url('./images2/img00${i + 1}.jpeg')`
+//         clicked = false
+//       } else {
+//         div.style.backgroundImage = "url('./images2/spaceBG.jpeg')"
+//         clicked = true
+//       }
+//     })
+//     images.appendChild(div)
+//   }
+// }
 
 document.addEventListener('DOMContentLoaded', init)
 
