@@ -3,22 +3,25 @@
 //   // this.style.backgroundImage = "url('./images/spaceBG.jpeg')"
 // }
 let clicked = true
+let divClicked = []
 
 const init = () => {
   for (let j = 0; j < 2; j++) {
     for (let i = 0; i < 18; i++) {
-      const img = "url('./images/spaceBG.jpeg')"
+      const bgImg = "url('./images/spaceBG.jpeg')"
+      const cardImg = `url('./images/img00${i + 1}.jpeg')`
       const images = document.querySelector('.images')
       const div = document.createElement('div')
       div.className = `img ${i}`
-      div.style.backgroundImage = img
-      div.addEventListener('click', () => {
-        console.log('WINNING')
+      div.style.backgroundImage = bgImg
+      div.addEventListener('click', handleClick = function() {
+        let cur = (event.target)
+        divClicked.push(cur)
         if (clicked) {
-          div.style.backgroundImage = `url('./images/img00${i + 1}.jpeg')`
+          div.style.backgroundImage = cardImg
           clicked = false
         } else {
-          div.style.backgroundImage = "url('./images/spaceBG.jpeg')"
+          div.style.backgroundImage = bgImg
           clicked = true
         }
       })

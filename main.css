@@ -20,6 +20,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+.disabled {
+  display: none;
+}
 /*table {
   border: 5px solid black;
   margin: 0 auto;
