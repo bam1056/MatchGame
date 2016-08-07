@@ -29,6 +29,8 @@ function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
     //console.log('SECOND IF: ', turnedCards[0].style.backgroundImage, turnedCards[1].style.backgroundImage)
     if (turnedCards[0].style.backgroundImage === turnedCards[1].style.backgroundImage) {
       playerScore ++
+      turnedCards[0].style.opacity = '50%'
+      turnedCards[1].style.opacity = '50%'
       matchedCards.push(turnedCards.pop())
       matchedCards.push(turnedCards.pop())
       if(playerScore === 18) {

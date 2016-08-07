@@ -21,6 +21,18 @@ body {
   margin: 5px;
 }
 
+.img::after {
+  content: "";
+  background-image: url('./images/overlay.jpg');
+  opacity: 0.85;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 
 /*table {
   border: 5px solid black;
