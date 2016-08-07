@@ -1,15 +1,46 @@
-let arrayOfClicked = Array(36).fill(true)
-console.log(arrayOfClicked)
+let clickedBool = Array(36).fill(true)
+let turnedCards = []
+let playerScore = 0
+//
+// const compare = () => {
+//
+// }
 
-function handleImgClick (arrayOfClicked, i, cardImg, bgImg) {
-  if (arrayOfClicked[i]) {
+function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
+
+  if (turnedCards.length < 2) {
     this.style.backgroundImage = cardImg
-    arrayOfClicked[i] = false
-  } else {
-    this.style.backgroundImage = bgImg
-    arrayOfClicked[i] = true
+    clickedBool[i] = false
+    //let etsb = event.target
+    turnedCards.push(this)
+    //console.log('FIRST IF: ', etsb, this)
+  }
+  if (turnedCards.length === 2) {
+    //console.log('SECOND IF: ', turnedCards[0].style.backgroundImage, turnedCards[1].style.backgroundImage)
+    if (turnedCards[0].style.backgroundImage === turnedCards[1].style.backgroundImage) {
+      playerScore ++
+      turnedCards.pop()
+      turnedCards.pop()
+      // console.log("COMPARISON", playerScore)
+      // console.log(turnedCards.pop(), turnedCards)
+      // console.log(turnedCards.pop(), turnedCards)
+    } else {
+      turnedCards[0].style.backgroundImage = bgImg
+      turnedCards[1].style.backgroundImage = bgImg
+      //console.log("ELSE", turnedCards[0], turnedCards[1])
+      turnedCards.pop()
+      turnedCards.pop()
+      init()
+    }
   }
 }
+  // if (clickedBool[i]) {
+  //
+  // } else {
+  //   this.style.backgroundImage = bgImg
+  //   clickedBool[i] = true
+  // }
+
 
 const init = () => {
   for (let j = 0; j < 2; j++) {
@@ -18,10 +49,15 @@ const init = () => {
       const cardImg = `url('./images/img00${i + 1}.jpeg')`
       const images = document.querySelector('.images')
       const div = document.createElement('div')
-      div.className = `img ${i} hidden`
-      div.addEventListener('click', function () { handleImgClick.call(this, arrayOfClicked, i, cardImg, bgImg) })
+      div.className = `img ${i}`
+      div.style.backgroundImage = bgImg
+      div.addEventListener('click', function () {
+        handleImgClick.call(this, clickedBool, i, cardImg, bgImg, init)
+      })
       images.appendChild(div)
-
+    }
+  }
+}
 document.addEventListener('DOMContentLoaded', init)
 
 // const state = [

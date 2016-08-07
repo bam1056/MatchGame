@@ -16,13 +16,8 @@ body {
   background-repeat: no-repeat;
   margin: 5px;
 }
-.unhide {
-  background-image: url('./images/img001.jpeg');
-  border: 10px solid red;
-}
-.hidden {
-  background-image: url('./images/spaceBG.jpeg');
-}
+
+
 /*table {
   border: 5px solid black;
   margin: 0 auto;
