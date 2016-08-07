@@ -1,4 +1,3 @@
-let clickedBool = Array(36).fill(true)
 let turnedCards = []
 let matchedCards = []
 let playerScore = 0
@@ -18,7 +17,7 @@ const setNumArray = () => {
   return numArray
 }
 
-function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
+function handleImgClick (i, cardImg, bgImg, init) {
 
   if (turnedCards.length < 2) {
     this.style.backgroundImage = cardImg
@@ -44,9 +43,10 @@ function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
       setTimeout(() => {
         turnedCards[0].style.backgroundImage = bgImg
         turnedCards[1].style.backgroundImage = bgImg
+        turnedCards = []
         // console.log("ELSE", turnedCards[0], turnedCards[1])
-        turnedCards.pop()
-        turnedCards.pop()
+        // turnedCards.pop()
+        // turnedCards.pop()
       }, 1000)
     }
   }
@@ -64,7 +64,7 @@ const init = () => {
       div.className = `img ${i}`
       div.style.backgroundImage = bgImg
       div.addEventListener('click', function () {
-        handleImgClick.call(this, clickedBool, i, cardImg, bgImg, init)
+        handleImgClick.call(this, i, cardImg, bgImg, init)
       })
       images.appendChild(div)
     }
