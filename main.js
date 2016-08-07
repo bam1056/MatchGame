@@ -2,10 +2,21 @@ let clickedBool = Array(36).fill(true)
 let turnedCards = []
 let matchedCards = []
 let playerScore = 0
-//
-// const compare = () => {
-//
-// }
+let numArray = []
+
+const getImageNum = () => {
+  let randomIndex = Math.floor(Math.random() * numArray.length)
+  let num = numArray.splice(randomIndex, 1)[0]
+  return num
+}
+
+const setNumArray = () => {
+  for (let i = 0; i < 18; i++) {
+    numArray.push(i)
+  }
+  console.log(numArray)
+  return numArray
+}
 
 function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
 
@@ -34,23 +45,18 @@ function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
         // console.log("ELSE", turnedCards[0], turnedCards[1])
         turnedCards.pop()
         turnedCards.pop()
-      }, 1500)
+      }, 1000)
     }
   }
 }
-  // if (clickedBool[i]) {
-  //
-  // } else {
-  //   this.style.backgroundImage = bgImg
-  //   clickedBool[i] = true
-  // }
-
 
 const init = () => {
   for (let j = 0; j < 2; j++) {
+    setNumArray()
     for (let i = 0; i < 18; i++) {
+      let num = getImageNum()
       const bgImg = "url('./images/spaceBG.jpeg')"
-      const cardImg = `url('./images/img00${i + 1}.jpeg')`
+      const cardImg = `url('./images/img00${num + 1}.jpeg')`
       const images = document.querySelector('.images')
       const div = document.createElement('div')
       div.className = `img ${i}`
@@ -88,19 +94,9 @@ document.addEventListener('DOMContentLoaded', init)
 //   console.log(cardArray)
 // }
 //
-// const setNumArray = () => {
-//   for (let i = 0; i < 36; i++) {
-//     numArray.push(i)
-//   }
-//   return numArray
-// }
+
 //
-// const getImageNum = () => {
-//   let randomIndex = Math.floor(Math.random() * numArray.length)
-//   let num = numArray.splice(randomIndex, 1)[0]
-//   // console.log(num, numArray)
-//   return num
-// }
+
 //
 // const drawBoard = () => {
 //   let imageNum
