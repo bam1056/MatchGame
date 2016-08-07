@@ -2,6 +2,8 @@ body {
   text-align: center;
   font-size: 24px;
   background-color: rgb(82, 176, 212);
+  color: white;
+  font-family: fantasy;
 }
 .images {
   display: flex;
@@ -21,16 +23,8 @@ body {
   margin: 5px;
 }
 
-.img::after {
-  content: "";
-  background-image: url('./images/overlay.jpg');
-  opacity: 0.85;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+.matched {
+  opacity: 0.5;
 }
 
 
