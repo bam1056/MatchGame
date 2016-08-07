@@ -55,7 +55,7 @@ const init = () => {
     setNumArray()
     for (let i = 0; i < 5; i++) {
       let num = getImageNum()
-      const bgImg = "url('./images/spaceBG.jpeg')"
+      const bgImg = "url('./images/earthBigBG.jpeg')"
       const cardImg = `url('./images/img00${num + 1}.jpeg')`
       const images = document.querySelector('.images')
       const div = document.createElement('div')
