@@ -1,5 +1,6 @@
 let clickedBool = Array(36).fill(true)
 let turnedCards = []
+let matchedCards = []
 let playerScore = 0
 //
 // const compare = () => {
@@ -10,8 +11,6 @@ function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
 
   if (turnedCards.length < 2) {
     this.style.backgroundImage = cardImg
-    clickedBool[i] = false
-    //let etsb = event.target
     turnedCards.push(this)
     //console.log('FIRST IF: ', etsb, this)
   }
@@ -19,18 +18,23 @@ function handleImgClick (clickedBool, i, cardImg, bgImg, init) {
     //console.log('SECOND IF: ', turnedCards[0].style.backgroundImage, turnedCards[1].style.backgroundImage)
     if (turnedCards[0].style.backgroundImage === turnedCards[1].style.backgroundImage) {
       playerScore ++
-      turnedCards.pop()
-      turnedCards.pop()
+      matchedCards.push(turnedCards.pop())
+      matchedCards.push(turnedCards.pop())
+      if(playerScore === 18) {
+        document.querySelector('.images').textContent = 'YOU WIN!!!!'
+        console.log("WIN");
+      }
       // console.log("COMPARISON", playerScore)
-      // console.log(turnedCards.pop(), turnedCards)
-      // console.log(turnedCards.pop(), turnedCards)
+      // console.log(turnedCards)
+      // console.log(turnedCards)
     } else {
-      turnedCards[0].style.backgroundImage = bgImg
-      turnedCards[1].style.backgroundImage = bgImg
-      //console.log("ELSE", turnedCards[0], turnedCards[1])
-      turnedCards.pop()
-      turnedCards.pop()
-      init()
+      setTimeout(() => {
+        turnedCards[0].style.backgroundImage = bgImg
+        turnedCards[1].style.backgroundImage = bgImg
+        // console.log("ELSE", turnedCards[0], turnedCards[1])
+        turnedCards.pop()
+        turnedCards.pop()
+      }, 1500)
     }
   }
 }

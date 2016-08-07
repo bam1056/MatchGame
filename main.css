@@ -6,6 +6,9 @@ body {
 .images {
   display: flex;
   flex-wrap: wrap;
+  font-size: 5em;
+  color: white;
+  text-align: center;
 }
 .img {
   width: 100px;
