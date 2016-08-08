@@ -13,7 +13,7 @@ const getImageNum = () => {
 }
 
 const setNumArray = () => {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 18; i++) {
     numArray.push(i)
   }
   console.log(numArray)
@@ -32,13 +32,13 @@ function handleImgClick (i, cardImg, bgImg, init) {
       turnedCards[1].className = 'img matched'
       matchedCards.push(turnedCards.pop())
       matchedCards.push(turnedCards.pop())
-      if (playerScore === 5) {
+      if (playerScore === 18) {
         let end = new Date()
         let diff = end - start
         const win = document.querySelector('.images')
         const time = document.querySelector('.gameLength')
         win.textContent = 'YOU WIN!!!!'
-        time.textContent = `You're game lasted ${moment.duration(diff).seconds()} seconds`
+        time.textContent = `You're game lasted ${moment.duration(diff).minutes()} minute(s)`
       }
     } else {
       setTimeout(() => {
@@ -53,9 +53,9 @@ function handleImgClick (i, cardImg, bgImg, init) {
 const init = () => {
   for (let j = 0; j < 2; j++) {
     setNumArray()
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 18; i++) {
       let num = getImageNum()
-      const bgImg = "url('./images/earthBigBG.jpeg')"
+      const bgImg = "url('./images/earthBG.jpg')"
       const cardImg = `url('./images/img00${num + 1}.jpeg')`
       const images = document.querySelector('.images')
       const div = document.createElement('div')
