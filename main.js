@@ -1,10 +1,11 @@
-var moment = require('moment')
+const moment = require('moment')
 moment().format()
 let turnedCards = []
 let matchedCards = []
 let playerScore = 0
 let numArray = []
 let start = new Date()
+
 const getImageNum = () => {
   let randomIndex = Math.floor(Math.random() * numArray.length)
   let num = numArray.splice(randomIndex, 1)[0]

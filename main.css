@@ -9,6 +9,21 @@ body {
   text-shadow: 4px 4px 3px rgb(82, 176, 212);
   font-family: 'Subspace', fantasy;
 }
+h1 {
+  margin-top: -50px;
+  margin-bottom: 0;
+}
+.logo {
+  background-image: url('images/ds9BG.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  width: 700px;
+  height: 300px;
+  margin-bottom: 0;
+
+}
 .images, .gameLength {
   display: flex;
   flex-wrap: wrap;
