@@ -1,65 +1,71 @@
-const state = [
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0]
-]
+const moment = require('moment')
+moment().format()
+let turnedCards = []
+let matchedCards = []
+let playerScore = 0
 let numArray = []
-
-// const Card = (image, clicked, ref) => {
-//   this.imageLink = image
-//   this.bgLink = '"url(./images/spaceBG.jpeg)"',
-//   this.clicked = clicked
-//   this.tableRef = ref
-// }
-
-const handleClickEvent = () => {
-  console.log('Working')
-}
-
-const setNumArray = () => {
-  for (let i = 0; i < 36; i++) {
-    numArray.push(i)
-  }
-  return numArray
-}
+let start = new Date()
 
 const getImageNum = () => {
   let randomIndex = Math.floor(Math.random() * numArray.length)
   let num = numArray.splice(randomIndex, 1)[0]
-  // console.log(num, numArray)
   return num
 }
 
-const drawBoard = () => {
-  let imageNum
-  for (let i = 0; i < state.length; i++) {
-    for (let j = 0; j < state[i].length; j++) {
-      const cell = document.querySelector(
-        `table tr:nth-child(${i + 1}) td:nth-child(${j + 1})`
-      )
-      imageNum = getImageNum()
-      // let curCard = new Card(`url('./images/img00${imageNum + 1}.jpeg')`,"url('./images/spaceBG.jpeg')", false, cell)
-      // console.log(curCard)
-      cell.style.backgroundImage = `url('./images/img00${imageNum + 1}.jpeg')`
+const setNumArray = () => {
+  for (let i = 0; i < 18; i++) {
+    numArray.push(i)
+  }
+  console.log(numArray)
+  return numArray
+}
+
+function handleImgClick (i, cardImg, bgImg, init) {
+  if (turnedCards.length < 2) {
+    this.style.backgroundImage = cardImg
+    turnedCards.push(this)
+  }
+  if (turnedCards.length === 2) {
+    if (turnedCards[0].style.backgroundImage === turnedCards[1].style.backgroundImage) {
+      playerScore++
+      turnedCards[0].className = 'img matched'
+      turnedCards[1].className = 'img matched'
+      matchedCards.push(turnedCards.pop())
+      matchedCards.push(turnedCards.pop())
+      if (playerScore === 18) {
+        let end = new Date()
+        let diff = end - start
+        const win = document.querySelector('.images')
+        const time = document.querySelector('.gameLength')
+        win.textContent = 'YOU WIN!!!!'
+        time.textContent = `You're game lasted ${moment.duration(diff).minutes()} minute(s)`
+      }
+    } else {
+      setTimeout(() => {
+        turnedCards[0].style.backgroundImage = bgImg
+        turnedCards[1].style.backgroundImage = bgImg
+        turnedCards = []
+      }, 1000)
     }
   }
 }
 
 const init = () => {
-  setNumArray()
-  drawBoard()
-  const rows = document.querySelectorAll('tr')
-  for (let i = 0; i < rows.length; i++) {
-    const cols = rows[i].querySelectorAll('td')
-    for (let j = 0; j < cols.length; j++) {
-      cols[j].addEventListener('click', () => {
-        handleClickEvent()
+  for (let j = 0; j < 2; j++) {
+    setNumArray()
+    for (let i = 0; i < 18; i++) {
+      let num = getImageNum()
+      const bgImg = "url('./images/earthBG.jpg')"
+      const cardImg = `url('./images/img00${num + 1}.jpeg')`
+      const images = document.querySelector('.images')
+      const div = document.createElement('div')
+      div.className = `img ${i}`
+      div.style.backgroundImage = bgImg
+      div.addEventListener('click', function () {
+        handleImgClick.call(this, i, cardImg, bgImg, init)
       })
+      images.appendChild(div)
     }
   }
 }
-
 document.addEventListener('DOMContentLoaded', init)

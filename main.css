@@ -1,137 +1,47 @@
 body {
   text-align: center;
-  font-size: 24px;
+  font-size: 48px;
   background-color: rgb(82, 176, 212);
-  /*background-image: url('./images/earthBigBG.jpeg');
-  background-size: contain;
+  background-image: url('./images/spaceBG.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(37, 81, 148);
+  text-shadow: 4px 4px 3px rgb(82, 176, 212);
+  font-family: 'Subspace', fantasy;
+}
+h1 {
+  margin-top: -50px;
+  margin-bottom: 0;
+}
+.logo {
+  background-image: url('images/ds9BG.png');
   background-position: center;
-  background-repeat: no-repeat;*/
-}
-table {
-  border: 5px solid black;
+  background-size: contain;
+  background-repeat: no-repeat;
   margin: 0 auto;
-}
+  width: 700px;
+  height: 300px;
+  margin-bottom: 0;
 
-td {
-  width: 100px;
-  height: 100px;
-  border: 5px solid black;
-  /*background-image: url('./images/spaceBG.jpeg');*/
+}
+.images, .gameLength {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  justify-content: center;
+}
+.img {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgb(82, 176, 212);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-/*
-.one1 {
-  background-image: url('./images/bashir.jpeg');
-}
-.two1 {
-  background-image: url('./images/changling.jpeg');
-}
-.three1 {
-  background-image: url('./images/cisco.jpeg');
-}
-.four1 {
-  background-image: url('./images/dax.jpeg');
-}
-.five1 {
-  background-image: url('./images/dominion.jpeg');
-}
-.six1 {
-  background-image: url('./images/garock.jpeg');
+  margin: 5px;
 }
 
-.one2 {
-  background-image: url('./images/jemHadar.jpeg');
+.matched {
+  opacity: 0.5;
 }
-.two2 {
-  background-image: url('./images/kaiWinn.jpeg');
-}
-.three2 {
-  background-image: url('./images/kyra.jpeg');
-}
-.four2 {
-  background-image: url('./images/morn.jpeg');
-}
-.five2 {
-  background-image: url('./images/newDax.jpeg');
-}
-.six2 {
-  background-image: url('./images/obrian.jpeg');
-}
-
-.one3 {
-  background-image: url('./images/odo.jpeg');
-}
-.two3 {
-  background-image: url('./images/quark.jpeg');
-}
-.three3 {
-  background-image: url('./images/rom.jpeg');
-}
-.four3 {
-  background-image: url('./images/station.jpeg');
-}
-.five3 {
-  background-image: url('./images/worf.jpeg');
-}
-.six3 {
-  background-image: url('./images/wormHole.jpeg');
-}
-
-.one4 {
-  background-image: url('./images/bashir.jpeg');
-}
-.two4 {
-  background-image: url('./images/changling.jpeg');
-}
-.three4 {
-  background-image: url('./images/cisco.jpeg');
-}
-.four4 {
-  background-image: url('./images/dax.jpeg');
-}
-.five4 {
-  background-image: url('./images/dominion.jpeg');
-}
-.six4 {
-  background-image: url('./images/garock.jpeg');
-}
-
-.one5 {
-  background-image: url('./images/jemHadar.jpeg');
-}
-.two5 {
-  background-image: url('./images/kaiWinn.jpeg');
-}
-.three5 {
-  background-image: url('./images/kyra.jpeg');
-}
-.four5 {
-  background-image: url('./images/morn.jpeg');
-}
-.five5 {
-  background-image: url('./images/newDax.jpeg');
-}
-.six5 {
-  background-image: url('./images/obrian.jpeg');
-}
-
-.one6 {
-  background-image: url('./images/odo.jpeg');
-}
-.two6 {
-  background-image: url('./images/quark.jpeg');
-}
-.three6 {
-  background-image: url('./images/rom.jpeg');
-}
-.four6 {
-  background-image: url('./images/station.jpeg');
-}
-.five6 {
-  background-image: url('./images/worf.jpeg');
-}
-.six6 {
-  background-image: url('./images/wormHole.jpeg');
-}*/
